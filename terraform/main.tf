@@ -5,12 +5,11 @@ data "aws_vpc" "selected" {
   }
 }
 
-data "aws_subnet" "public" {
-  id = "subnet-0d647d78d2309afc0"
-  #filter {
-    #name   = "vpc-id"
-    #values = [data.aws_vpc.selected.id]
- # }
+data "aws_subnets" "public" {
+  filter {
+    name   = "tag:Name"
+    values = ["main-subnet-public1-us-east-1a"]
+  }
 }
 
 variable "environment" {
