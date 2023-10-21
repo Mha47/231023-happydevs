@@ -1,0 +1,30 @@
+{
+    "family": "sctp-happydevs-app",
+    "executionRoleArn": "arn:aws:iam::255945442255:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "sctp-happydevs-app",
+            "image": "255945442255.dkr.ecr.us-east-1.amazonaws.com/sctp-happydevs-app:latest",
+            "portMappings": [
+                {
+                    "containerPort": 5000,
+                    "hostPort": 5000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "NEW_FEATURE",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024"
+}
