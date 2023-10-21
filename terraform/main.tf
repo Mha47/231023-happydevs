@@ -1,7 +1,7 @@
 data "aws_vpc" "selected" {
   filter {
     name   = "tag:Name"
-    values = ["sctp-sandbox-vpc-vpc"]
+    values = ["main-vpc"]
   }
 }
 
