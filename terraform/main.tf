@@ -5,7 +5,7 @@ data "aws_vpc" "selected" {
   }
 }
 
-data "aws_subnets" "public" {
+data "aws_subnet" "public" {
   id = "subnet-0d647d78d2309afc0"
   #filter {
     #name   = "vpc-id"
