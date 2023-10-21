@@ -6,10 +6,11 @@ data "aws_vpc" "selected" {
 }
 
 data "aws_subnets" "public" {
-  filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.selected.id]
-  }
+  id = "subnet-0d647d78d2309afc0"
+  #filter {
+    #name   = "vpc-id"
+    #values = [data.aws_vpc.selected.id]
+ # }
 }
 
 variable "environment" {
